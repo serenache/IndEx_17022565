@@ -1,48 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!--import the render_field-->
+{% from "_formhelpers.html" import render_field %}
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <!-- My own CSS -->
-    <link rel="stylesheet" href="../static/style/mystyles.css">
-    <title>Rain blog</title>
-</head>
+<!-- Use the base template -->
+{% extends "base.html" %}
 
-<body>
-<div class="container-fluid">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Rain blog</a>
-        <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="index.html">Home
-                <a class="nav-item nav-link" href="signup.html">Signup</a>
-        </div>
-    </nav>
-    <hr>
+<!-- Title for this page -->
+{% block title %} Sign up {% endblock %}
 
+<!-- Content for this page -->
+{% block content %}
     <h3>Sign up</h3>
     <br>
 
-    <form>
-        <div class="form-group">
-            <label for="exampleInputUsername1">Username</label>
-            <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Enter Username" required>
-        </div>
-
-        <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                   placeholder="Enter email" required>
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-        </div>
-
-        <button type="submit" class="btn btn-primary">Sign up</button>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <dl>
+            {{ render_field(form.name) }}
+            {{ render_field(form.email) }}
+            {{ render_field(form.password) }}
+            {{ render_field(form.confirm) }}
+            <dd><input type=submit value='Sign Up' class='btn btn-primary'></dd>
+        </dl>
     </form>
-</div>
 
-</body>
-</html>
+
+{% endblock %}
