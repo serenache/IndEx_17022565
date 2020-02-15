@@ -1,0 +1,33 @@
+<!-- Use the base template -->
+{% extends "base.html" %}
+
+<!-- Title for this page -->
+{% block title %} UserInfo {% endblock %}
+
+<!-- Content for this page -->
+{% block content %}
+    <h1>User Information</h1>
+    <br>
+
+    {% if users|length %}
+        <table class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for user in users %}
+                <tr>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.email }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>Sorry, no users are available to view at this time</p>
+    {% endif %}
+{% endblock %}
+

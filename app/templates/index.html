@@ -12,14 +12,12 @@
 
         <div class="col-sm-3 col-md-6 col-lg-4">
             <p>
-                A search form to allow a user to search for cities or blog post content
+                A search form to allow a user to enter city name to search for related blog posts
             </p>
-            <nav class="navbar navbar-light bg-light">
-                <form class="form-inline">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
-            </nav>
+            <form class="form-inline ml-auto" action="search" method="post">
+                <input class="form-control" type="search" placeholder="Enter city name to search"  name="search_term">
+                <button class="btn btn-primary btn-outline-light" type="submit">Search</button>
+            </form>
         </div>
 
 

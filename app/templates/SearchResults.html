@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Search results{% endblock %}
+{% block content %}
+    {% if results|length %}
+        <table class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">City</th>
+                <th scope="col">Forecast</th>
+                <th scope="col">Comment</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for result in results %}
+                <tr>
+                    <td>{{ result.city }}</td>
+                    <td>{{ result.forecast }}</td>
+                    <td>{{ result.comment }}</td>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>Sorry, no blog post found for the city</p>
+    {% endif %}
+{% endblock %}

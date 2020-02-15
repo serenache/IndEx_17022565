@@ -1,4 +1,5 @@
 # Individual Exercise
 
-This is individual exercise 3.
-Note that the app.py is used to configure and run the app and to define the routes
+This is individual exercise 4.
+Github repository:
+https://github.com/serenache/IndEx_17022565.git

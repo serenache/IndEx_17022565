@@ -39,7 +39,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship, sessionmaker
 from sqlalchemy import create_engine
 
-engine = create_engine('sqlite:///rain.db')
+engine = create_engine('sqlite:///rain.sqlite')
 
 Base = declarative_base()
 
